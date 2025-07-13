@@ -1,17 +1,24 @@
 import { ThemeToggle } from "../components/ThemeToggle";
+import { Navbar } from "../components/Navbar";
+import { SiteIconComponent } from "../components/SiteIcon"
+// import { HoneycombBackground } from "../components/HoneycombBackground";
+// import { CursorGlow } from "../components/CursorGlow";
 
-export const Home = () => {
-    return (
-        <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-            {<ThemeToggle/>}
+export const Home = () => (
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+        {/* {<CursorGlow/>} */}
+        {/* {<HoneycombBackground />} */}
 
-            {/* Background Effects */}
+        {<ThemeToggle />}
 
-            {/* Navbar */}
+        {<SiteIconComponent />}
 
-            {/** Main Content */}
+        {<Navbar />}
 
-            {/** Footer */}
-        </div>
-    );
-};
+        {/* Navbar */}
+
+        {/** Main Content */}
+
+        {/** Footer */}
+    </div>
+);

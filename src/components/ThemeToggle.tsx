@@ -38,7 +38,7 @@ export const ThemeToggle = () => {
 
     return (
         <button onClick={toggleTheme} className={classname("fixed max-sm:hidden top-15 right-18 z-50 p-2",
-            "rounded-full transition-colors duration-300"
+            "rounded-full transition-colors duration-300 hover:-rotate-20"
         )}>
             <div
                 className={`relative transition-transform duration-500 ease-in-out ${isLightMode ? "-rotate-360" : "rotate-0"}`}
