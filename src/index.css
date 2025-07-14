@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Gotham';
-  src: url('/fonts/Gotham-Medium.woff2') format('opentype');
+  font-family: "Gotham";
+  src: url("/fonts/Gotham-Medium.woff2") format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 .font-gotham {
-  font-family: 'Gotham', system-ui, -apple-system, "system-ui", "San Francisco", Roboto, "Segoe UI", Ubuntu, "Helvetica Neue", sans-serif;
+  font-family: "Gotham", system-ui, -apple-system, "system-ui", "San Francisco",
+    Roboto, "Segoe UI", Ubuntu, "Helvetica Neue", sans-serif;
 }
-
 
 @theme {
   --color-border: hsl(var(--border));
@@ -71,6 +71,46 @@
     100% {
       transform: rotate(215deg) translateX(-500px);
       opacity: 0;
+    }
+  }
+
+  @keyframes chevron-bounce {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    30% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    60% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+  }
+
+  @keyframes vibrate {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-1px, 1px);
+    }
+    40% {
+      transform: translate(-1px, -1px);
+    }
+    60% {
+      transform: translate(1px, 1px);
+    }
+    80% {
+      transform: translate(1px, -1px);
+    }
+    100% {
+      transform: translate(0);
     }
   }
 }
@@ -171,12 +211,20 @@
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
 }
 
+@utility animate-chevron-bounce {
+  animation: chevron-bounce 4s ease-in-out infinite;
+}
+
+@utility animate-vibrate {
+  animation: vibrate 0.4s linear infinite;
+}
+
 @utility toggle-theme-icon {
   @apply transition-opacity duration-300 h-8 w-8;
 }
 
 @utility text-accent {
-  color: hsl(var(--accent))
+  color: hsl(var(--accent));
 }
 
 #root {
