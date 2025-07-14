@@ -1,7 +1,7 @@
 import GithubIcon from '../assets/github.svg?react';
 import LinkedinIcon from '../assets/linkedin.svg?react';
 import InstagramIcon from '../assets/instagram.svg?react';
-import { Cat, X } from "lucide-react";
+import { ListFilter, X } from "lucide-react";
 import { classname } from '../lib/utils';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -47,7 +47,7 @@ export const Navbar = () => {
 
     return (
         <nav className={classname(
-            "fixed left-14 top-35 h-3/4 z-40 transition-all duration-300",
+            "fixed left-12 top-35 h-3/4 z-40 transition-all duration-300",
             isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
         )}>
             {/* desktop nav */}
@@ -88,7 +88,7 @@ export const Navbar = () => {
                 className="md:hidden text-foreground z-50 transition-all hover:text-accent duration-300"
                 aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
             >
-                {isMenuOpen ? <X size={24} /> : <Cat size={24} className="animate-vibrate" />}
+                {isMenuOpen ? <X size={24} /> : <ListFilter size={24} />}
             </button>
             <div
                 className={classname(
@@ -104,7 +104,7 @@ export const Navbar = () => {
                         <a
                             key={key}
                             href={item.href}
-                            className="text-foreground/80 hover:text-accent transition-colors duration-300"
+                            className="hover:text-accent transition-colors duration-300"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {item.name}

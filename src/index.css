@@ -19,6 +19,8 @@
   --color-foreground: hsl(var(--foreground));
 
   --color-primary: hsl(var(--primary));
+  --color-secondary: hsl(var(--secondary));
+  --color-accent: hsl(var(--accent));
   --color-primary-foreground: hsl(var(--primary-foreground));
 
   --color-card: hsl(var(--card));
@@ -50,7 +52,7 @@
       opacity: 0.8;
     }
   }
-  @keyframes fade-in {
+  @keyframes fade-in-translate {
     from {
       opacity: 0;
       transform: translateY(20px);
@@ -73,8 +75,7 @@
       opacity: 0;
     }
   }
-
-  @keyframes chevron-bounce {
+  @keyframes fading-bounce {
     0% {
       opacity: 0;
       transform: translateY(-100%);
@@ -92,7 +93,6 @@
       transform: translateY(-100%);
     }
   }
-
   @keyframes vibrate {
     0% {
       transform: translate(0);
@@ -113,6 +113,45 @@
       transform: translate(0);
     }
   }
+  @keyframes sweep-border {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes vanish-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+@keyframes reveal-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @layer base {
@@ -122,7 +161,8 @@
 
     --card: 222 47% 8%;
 
-    --primary: 250 65% 65%;
+    --primary: 0 0% 100%;
+    --secondary: 0 0% 63%;
     --primary-foreground: 213 31% 91%;
 
     --accent: 180 100% 50%;
@@ -136,7 +176,8 @@
 
     --card: 0 0% 100%;
 
-    --primary: 250 47% 60%;
+    --primary: 0 0% 10%;
+    --secondary: 0 0% 43%;
     --primary-foreground: 210 40% 98%;
 
     --accent: 180 100% 50%;
@@ -165,8 +206,11 @@
   @media (width >= 640px) {
     max-width: 640px;
   }
-  @media (width >= 768px) {
-    max-width: 768px;
+  @media (width >= 780px) {
+    max-width: 780;
+  }
+  @media (width >= 850px) {
+    max-width: 850;
   }
   @media (width >= 1024px) {
     max-width: 1024px;
@@ -211,8 +255,12 @@
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
 }
 
-@utility animate-chevron-bounce {
-  animation: chevron-bounce 4s ease-in-out infinite;
+@utility animate-fade-in-out {
+  animation: fade-in-out 4s ease-in-out infinite;
+}
+
+@utility animate-fading-bounce {
+  animation: fading-bounce 3s ease-in-out infinite;
 }
 
 @utility animate-vibrate {
@@ -225,6 +273,22 @@
 
 @utility text-accent {
   color: hsl(var(--accent));
+}
+
+@utility animate-vanish-out {
+  animation: vanish-out 2s ease forwards;
+}
+
+@utility animate-reveal-in {
+  animation: reveal-in 2s ease forwards;
+}
+
+@utility animate-reveal-in-delay {
+  animation: reveal-in 2s ease forwards;
+}
+
+@utility animate-sweep-border {
+  animation: sweep-border 2s ease-in-out forwards;
 }
 
 #root {
