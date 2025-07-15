@@ -37,7 +37,7 @@ export const ThemeToggle = () => {
     }
 
     return (
-        <button onClick={toggleTheme} className={classname("fixed max-md:hidden top-15 right-18 z-50 p-2",
+        <button onClick={toggleTheme} className={classname("fixed max-md:hidden top-15 right-10 lg:right-18 z-50 p-2",
             "rounded-full transition-colors duration-300 hover:-rotate-20"
         )}>
             <div

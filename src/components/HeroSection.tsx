@@ -1,10 +1,12 @@
-import { Mouse, Plus } from "lucide-react";
+import { Mouse, Braces } from "lucide-react";
 import { useEffect, useState } from "react";
+import { classname } from "../lib/utils";
 
 export const HeroSection = () => {
     const [key, setKey] = useState(0);
     const skills = ["TypeScript", "React", "C#", "JavaScript", "NodeJS", ".NET", "Azure", "AWS", "Python", "TailwindCSS", "Automation"];
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+    const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -26,6 +28,16 @@ export const HeroSection = () => {
 
         return () => observer.disconnect();
     }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsVisible(window.scrollY < 10);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
 
     return (
         <section
@@ -59,14 +71,14 @@ export const HeroSection = () => {
                         </span>
                         <span className="h-[3px] ml-3 bg-secondary opacity-50 flex-1 max-w-[200px] md:max-w-[300px]"></span>
                     </span>
-                    <span key={`+${currentTitleIndex}`} className="relative overflow-hidden inline-block group">
+                    <span key={`+${currentTitleIndex}`} className="relative overflow-hidden inline-block group -ml-10 md:-ml-40 lg:-ml-50">
                         <span className="absolute inset-0 bg-accent animate-sweep-border z-10" />
                         <span className="relative flex items-center py-2"
                             style={{
                                 opacity: 0,
                                 animation: 'fade-in 0.5s ease 1s forwards'
                             }}>
-                            <Plus className="text-secondary h-6 w-6 lg:h-14 lg:w-14" />
+                            <Braces className="text-secondary h-6 w-6 lg:h-14 lg:w-14" />
                             <span className="text-primary ml-3 font-gotham text-[56px] md:text-[70px] lg:text-[90px]"
                             >
                                 {skills[currentTitleIndex]}
@@ -77,7 +89,9 @@ export const HeroSection = () => {
             </div>
 
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-fading-bounce">
-                <Mouse className="h-7 w-7 text-secondary" />
+                <Mouse className={classname("h-7 w-7 text-secondary",
+                    isVisible ? "opacity-100" : "opacity-0"
+                )} />
             </div>
         </section>
     );

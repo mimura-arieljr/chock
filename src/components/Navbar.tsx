@@ -4,8 +4,6 @@ import InstagramIcon from '../assets/instagram.svg?react';
 import { ListFilter, X } from "lucide-react";
 import { classname } from '../lib/utils';
 import { useState } from 'react';
-import { useEffect } from 'react';
-
 
 type navLinks = {
     name: string,
@@ -32,24 +30,11 @@ const socialLinks: socialLinks[] = [
 
 export const Navbar = () => {
     const [activeLink, setActiveLink] = useState<string | null>(null);
-    const [isVisible, setIsVisible] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsVisible(window.scrollY > 10);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
 
     return (
-        <nav className={classname(
-            "fixed left-12 top-35 h-3/4 z-40 transition-all duration-300",
-            isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-        )}>
+        <nav className={classname("fixed md:left-12 md:top-35 md:h-3/4 md:opacity-0 lg:opacity-100 z-40 transition-all duration-300")}>
             {/* desktop nav */}
             <div className="h-full flex flex-col justify-between p-4">
                 <div className="hidden md:flex flex-col items-end space-x-6">
@@ -85,7 +70,7 @@ export const Navbar = () => {
             {/* mobile nav */}
             <button
                 onClick={() => setIsMenuOpen((prev) => !prev)}
-                className="md:hidden text-foreground z-50 transition-all hover:text-accent duration-300"
+                className="md:hidden fixed top-10 right-5 h-7 text-primary z-50 transition-all hover:text-accent duration-300"
                 aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
             >
                 {isMenuOpen ? <X size={24} /> : <ListFilter size={24} />}
@@ -108,6 +93,14 @@ export const Navbar = () => {
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {item.name}
+                        </a>
+                    ))}
+                </div>
+
+                <div className="absolute bottom-5 left-5 flex flex-row space-x-6">
+                    {socialLinks.map(({ Icon, href }, key) => (
+                        <a key={key} href={href} target="_blank" rel="noopener noreferrer">
+                            <Icon className="h-4 w-4 text-blue fill-current hover:text-accent transition-colors" />
                         </a>
                     ))}
                 </div>
