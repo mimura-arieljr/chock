@@ -66,8 +66,17 @@ export const HeroSection = () => {
                     </h1>
 
                     <span className="flex items-center w-full">
-                        <span className="text-primary font-gotham text-[56px] md:text-[70px] lg:text-[90px]">
-                            Developer
+                        <span className="relative overflow-hidden inline-block group">
+                            <span className="absolute inset-0 bg-accent animate-sweep-border z-10" />
+                            <span
+                                className="relative text-primary font-gotham text-[56px] md:text-[70px] lg:text-[90px]"
+                                style={{
+                                    opacity: 0,
+                                    animation: 'fade-in 0.5s ease 1s forwards'
+                                }}
+                            >
+                                Developer
+                            </span>
                         </span>
                         <span className="h-[3px] ml-3 bg-secondary opacity-50 flex-1 max-w-[200px] md:max-w-[300px]"></span>
                     </span>
