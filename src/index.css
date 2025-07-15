@@ -21,6 +21,7 @@
   --color-primary: hsl(var(--primary));
   --color-secondary: hsl(var(--secondary));
   --color-accent: hsl(var(--accent));
+  --color-accent-themed: hsl(var(--accent-themed));
   --color-primary-foreground: hsl(var(--primary-foreground));
 
   --color-card: hsl(var(--card));
@@ -159,13 +160,14 @@
     --background: 222 47% 4%;
     --foreground: 213 31% 91%;
 
-    --card: 222 47% 8%;
+    --card: 0 0% 10%;
 
     --primary: 0 0% 100%;
     --secondary: 0 0% 63%;
     --primary-foreground: 213 31% 91%;
 
     --accent: 180 100% 50%;
+    --accent-themed: 180 100% 50%;
 
     --border: 217 33% 20%;
   }
@@ -174,13 +176,14 @@
     --background: 210 40% 98%;
     --foreground: 222 47% 11%;
 
-    --card: 0 0% 100%;
+    --card: 180 100% 50%;
 
     --primary: 0 0% 10%;
     --secondary: 0 0% 43%;
     --primary-foreground: 210 40% 98%;
 
     --accent: 180 100% 50%;
+    --accent-themed: 0 0% 10%;
 
     --border: 214 32% 91%;
   }
@@ -229,7 +232,7 @@
 }
 
 @utility card-hover {
-  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+  @apply transition-transform duration-500 hover:shadow-lg hover:bg-card/40 rounded-2xl;
 }
 
 @utility gradient-border {
