@@ -3,6 +3,8 @@ import { SendHorizonal } from "lucide-react";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { easeOut } from "framer-motion";
+import DecryptedText from '../components/Animations/DecryptedText';
+
 
 type careerHistory = {
   duration: string,
@@ -84,7 +86,11 @@ export const CareerSection = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl z-10">
         <h2 className="text-3xl md:text-4xl font-gotham text-primary mb-12 text-start">
-          Career Background
+          <DecryptedText
+            text="Career Background"
+            animateOn="view"
+            revealDirection="center"
+          />
         </h2>
 
         {/* Career Description Section */}
