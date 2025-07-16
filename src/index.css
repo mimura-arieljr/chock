@@ -2,18 +2,22 @@
 
 @font-face {
   font-family: "Gotham";
-  src: url("/fonts/Gotham-Medium.woff2") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+  src: url("/fonts/Gotham-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GothamLight";
+  src: url("/fonts/Gotham-Light.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "GothamNarrow";
   src: url("/fonts/GothamNarrow-Thin.woff") format("woff2");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
+}
+
+@font-face {
+  font-family: "GothamNarrowBold";
+  src: url("/fonts/GothamNarrow-Bold.woff2") format("woff2");
 }
 
 .font-gotham {
@@ -21,10 +25,18 @@
     Roboto, "Segoe UI", Ubuntu, "Helvetica Neue", sans-serif;
 }
 
+.font-gotham-light {
+  font-family: "GothamLight", system-ui, -apple-system, "system-ui",
+    "San Francisco", Roboto, "Segoe UI", Ubuntu, "Helvetica Neue", sans-serif;
+}
+
 .font-gotham-narrow {
   font-family: "GothamNarrow", system-ui, sans-serif;
 }
 
+.font-gotham-narrow-bold {
+  font-family: "GothamNarrowBold", system-ui, sans-serif;
+}
 
 @theme {
   --color-border: hsl(var(--border));
@@ -105,6 +117,32 @@
     100% {
       opacity: 0;
       transform: translateY(-100%);
+    }
+  }
+  @keyframes fading-bounce-reverse {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    30% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-100%);
+    }
+    80% {
+      opacity: 1;
+      transform: translateY(-100%);
+    }
+    90% {
+      opacity: 1;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100%);
     }
   }
   @keyframes vibrate {
@@ -299,6 +337,10 @@
 
 @utility animate-fading-bounce {
   animation: fading-bounce 3s ease-in-out infinite;
+}
+
+@utility animate-fading-bounce-reverse {
+  animation: fading-bounce-reverse 2s ease-in-out 2s infinite;
 }
 
 @utility animate-vibrate {

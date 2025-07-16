@@ -124,11 +124,11 @@ export const CareerSection = () => {
               >
                 {careerType === "SE" ? (
                   <>
-                    <p className="font-gotham-narrow text-sm">
+                    <p className="font-gotham-light text-sm">
                       With over 5 years of experience in web development, I specialize in creating responsive,
                       accessible, and performant web applications using modern technologies.
                     </p>
-                    <p className="font-gotham-narrow text-sm">
+                    <p className="font-gotham-light text-sm">
                       I'm passionate about creating elegant solutions to complex problems, and I'm constantly
                       learning new technologies and techniques to stay at the forefront of the ever-evolving web
                       landscape.
@@ -136,11 +136,11 @@ export const CareerSection = () => {
                   </>
                 ) : (
                   <>
-                    <p className="font-gotham-narrow text-sm">
+                    <p className="font-gotham-light text-sm">
                       I started my career in the civil engineering industry where I was involved in planning,
                       design, and supervision of construction projects.
                     </p>
-                    <p className="font-gotham-narrow text-sm">
+                    <p className="font-gotham-light text-sm">
                       My experience taught me strong problem-solving skills, working with teams on-site, and
                       dealing with real-world structural challenges.
                     </p>
@@ -184,15 +184,15 @@ export const CareerSection = () => {
                     variants={cardVariants}
                     className="md:p-8 card-hover mt-2 mb-4 md:my-0 flex gap-3 self-start"
                   >
-                    <div className="w-1/5 font-gotham-narrow text-secondary text-[10px] md:text-[12px] mt-1">{item.duration}</div>
+                    <div className="w-1/5 font-gotham-light text-secondary text-[10px] md:text-[12px] mt-1">{item.duration}</div>
                     <div className="w-4/5">
                       <h4 className="font-gotham text-primary text-[14px] md:text-[16px]">{item.role}</h4>
-                      <p className="text-secondary text-[13px] mt-2">{item.description}</p>
+                      <p className="text-secondary font-gotham-light text-[13px] mt-2">{item.description}</p>
                       <div className="flex flex-wrap gap-2 pt-2.5">
                         {item.skills.map((skill, i) => (
                           <span
                             key={i}
-                            className="bg-secondary/10 text-primary px-3 py-1.5 rounded-full text-xs"
+                            className="bg-secondary/10 text-primary font-gotham-light px-3 py-1.5 rounded-full text-xs"
                           >
                             {skill}
                           </span>
