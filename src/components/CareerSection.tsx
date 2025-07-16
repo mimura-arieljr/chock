@@ -88,7 +88,7 @@ export const CareerSection = () => {
         </h2>
 
         {/* Career Description Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1.5fr] xl:grid-cols-[1fr_1.5fr] gap-3 text-start">
+        <div className="grid grid-cols-1 md:grid-cols-[1.25fr_1.5fr] gap-3 text-start">
           <div>
             <div className="mb-6 flex gap-4">
               <button
