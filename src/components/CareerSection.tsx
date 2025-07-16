@@ -76,7 +76,7 @@ export const CareerSection = () => {
   return (
     <motion.section
       id="Career"
-      className="py-24 px-4 md:h-screen relative"
+      className="py-24 px-4 relative"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 4, ease: "easeOut" }}
@@ -170,14 +170,14 @@ export const CareerSection = () => {
                 transition={{ duration: 0.5 }}
                 className="flex flex-col min-h-[600px]"
               >
-                <span className="text-accent-themed text-[18px] mb-4 lg:hidden font-gotham">Experience</span>
+                <span className="text-accent-themed text-[18px] lg:hidden font-gotham">Experience</span>
                 {(careerType === "SE" ? seCareerHistory : ceCareerHistory).map((item, idx) => (
                   <motion.div
                     key={idx}
                     variants={cardVariants}
-                    className="md:p-8 card-hover mt-2 mb-4 md:my-0 flex gap-3 self-start"
+                    className="p-8 card-hover flex gap-3 self-start"
                   >
-                    <div className="w-1/5 font-gotham text-secondary text-[9px] md:text-[11px] mt-1">{item.duration}</div>
+                    <div className="w-1/5 font-gotham text-secondary text-[11px] mt-1">{item.duration}</div>
                     <div className="w-4/5">
                       <h4 className="font-gotham text-primary text-[14px] md:text-[16px]">{item.role}</h4>
                       <p className="text-secondary text-[13px] mt-2">{item.description}</p>
