@@ -3,13 +3,13 @@ import { Navbar } from "../components/Navbar";
 import { SiteIconComponent } from "../components/SiteIcon"
 import { HeroSection } from "../components/HeroSection";
 import { CareerSection } from "../components/CareerSection";
-import { SkillsSection } from "../components/SkillsSection";
+import { ProjectsSection } from "../components/ProjectsSection";
+import { ContactSection } from "../components/ContactSection";
+import { Footer } from "../components/FooterSection";
 // import { HoneycombBackground } from "../components/HoneycombBackground";
-// import { CursorGlow } from "../components/CursorGlow";
 
 export const Home = () => (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-        {/* {<CursorGlow/>}  */}
 
         {/* {<HoneycombBackground />} */}
 
@@ -23,7 +23,11 @@ export const Home = () => (
 
         {<CareerSection />}
 
-        {<SkillsSection />}
+        {<ProjectsSection />}
+
+        {<ContactSection />}
+
+        {<Footer />}
 
     </div>
 );
