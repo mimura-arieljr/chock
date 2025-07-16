@@ -76,19 +76,19 @@ export const CareerSection = () => {
   return (
     <motion.section
       id="Career"
-      className="py-24 px-4 md:h-screen relative"
+      className="pt-24 pb-36 px-4 relative md:ml-12"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 4, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <div className="container mx-auto md:max-w-8xl z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl z-10">
         <h2 className="text-3xl md:text-4xl font-gotham text-primary mb-12 text-start">
           Career Background
         </h2>
 
         {/* Career Description Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-3 text-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1.5fr] xl:grid-cols-[1fr_1.5fr] gap-3 text-start">
           <div>
             <div className="mb-6 flex gap-4">
               <button

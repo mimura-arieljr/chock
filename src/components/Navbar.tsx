@@ -32,9 +32,16 @@ export const Navbar = () => {
     const [activeLink, setActiveLink] = useState<string | null>(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
     return (
-        <nav className={classname("fixed md:left-12 md:top-35 md:h-3/4 md:opacity-0 lg:opacity-100 z-40 transition-all duration-300")}>
+        <>
+            <button
+                onClick={() => setIsMenuOpen((prev) => !prev)}
+                className="lg:hidden fixed top-10 md:top-16 right-5 h-6 text-primary z-10 transition-all hover:text-accent duration-300"
+                aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+            >
+                {isMenuOpen ? <X size={24} /> : <ListFilter size={24} />}
+            </button>
+            <nav className={classname("hidden lg:flex fixed left-12 top-35 h-3/4 opacity-100 z-40 transition-all duration-300")}>
             {/* desktop nav */}
             <div className="h-full flex flex-col justify-between p-4">
                 <div className="hidden md:flex flex-col items-end space-x-6">
@@ -44,7 +51,7 @@ export const Navbar = () => {
                             href={item.href}
                             onClick={() => setActiveLink(item.href)}
                             className={classname(
-                                "relative text-foreground/80 hover:text-accent transition-colors duration-1000 font-gotham text-sm md:text-[16px] font-medium",
+                                "relative text-foreground/80 hover:text-accent transition-colors duration-1000 font-gotham text-sm md:text-[16px]",
                                 "before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:w-[4px] before:h-full before:bg-[hsl(var(--accent))]",
                                 (activeLink === item.href ? "before:scale-y-110" : "before:scale-y-0"),
                                 "hover:before:scale-y-115 before:origin-top before:transition-transform"
@@ -61,20 +68,13 @@ export const Navbar = () => {
                 <div className="hidden md:flex  flex-col items-start space-y-4">
                     {socialLinks.map(({ Icon, href }, key) => (
                         <a key={key} href={href} target="_blank" rel="noopener noreferrer">
-                            <Icon className="h-6 w-6 text-blue fill-current hover:text-accent transition-colors" />
+                            <Icon className="h-6 w-6 text-blue fill-current text-foreground/70 hover:text-accent transition-colors" />
                         </a>
                     ))}
                 </div>
             </div>
 
             {/* mobile nav */}
-            <button
-                onClick={() => setIsMenuOpen((prev) => !prev)}
-                className="md:hidden fixed top-10 right-5 h-7 text-primary z-50 transition-all hover:text-accent duration-300"
-                aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-            >
-                {isMenuOpen ? <X size={24} /> : <ListFilter size={24} />}
-            </button>
             <div
                 className={classname(
                     "fixed inset-0 bg-background/95 backdroup-blur-md z-40 flex flex-col items-center justify-center",
@@ -106,5 +106,6 @@ export const Navbar = () => {
                 </div>
             </div>
         </nav>
+        </>
     );
 };
