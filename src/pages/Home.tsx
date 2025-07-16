@@ -6,6 +6,7 @@ import { CareerSection } from "../components/CareerSection";
 import { ProjectsSection } from "../components/ProjectsSection";
 import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/FooterSection";
+import { Toaster } from "react-hot-toast";
 
 export const Home = () => (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -25,6 +26,8 @@ export const Home = () => (
         {<ContactSection />}
 
         {<Footer />}
+
+        <Toaster position="bottom-right" />
 
     </div>
 );

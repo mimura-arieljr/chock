@@ -8,10 +8,23 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "GothamNarrow";
+  src: url("/fonts/GothamNarrow-Thin.woff") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
 .font-gotham {
   font-family: "Gotham", system-ui, -apple-system, "system-ui", "San Francisco",
     Roboto, "Segoe UI", Ubuntu, "Helvetica Neue", sans-serif;
 }
+
+.font-gotham-narrow {
+  font-family: "GothamNarrow", system-ui, sans-serif;
+}
+
 
 @theme {
   --color-border: hsl(var(--border));
@@ -155,6 +168,28 @@
   }
 }
 
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes leave {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
 @layer base {
   :root {
     --background: 222 47% 4%;
@@ -292,6 +327,22 @@
 
 @utility animate-sweep-border {
   animation: sweep-border 2s ease-in-out forwards;
+}
+
+.clip-path-large {
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 10% 100%, 0 70%);
+}
+
+@utility clip-path-small {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 95% 100%, 0 100%);
+}
+
+@utility animate-enter {
+  animation: enter 0.3s ease-out forwards;
+}
+
+@utility animate-leave {
+  animation: leave 0.2s ease-in forwards;
 }
 
 #root {

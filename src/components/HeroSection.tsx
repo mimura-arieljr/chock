@@ -41,7 +41,7 @@ export const HeroSection = () => {
 
     return (
         <section
-            id="hero"
+            id="Hero"
             className="relative min-h-screen flex flex-col items-center justify-center px-4"
         >
             <div className="container w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl">
