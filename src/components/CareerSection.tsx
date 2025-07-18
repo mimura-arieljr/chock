@@ -132,13 +132,10 @@ export const CareerSection = () => {
                 {careerType === "SE" ? (
                   <>
                     <p className="font-gotham-light text-sm">
-                      With over 5 years of experience in web development, I specialize in creating responsive,
-                      accessible, and performant web applications using modern technologies.
+                      I'm a passionate software engineer who enjoys solving complex problems with clean, maintainable code. I specialize in full-stack development, building scalable systems, and delivering reliable software solutions.
                     </p>
                     <p className="font-gotham-light text-sm">
-                      I'm passionate about creating elegant solutions to complex problems, and I'm constantly
-                      learning new technologies and techniques to stay at the forefront of the ever-evolving web
-                      landscape.
+                      I’m deeply curious and committed to continuous learning, especially in areas like cloud infrastructure and automation. I actively explore new tools and techniques to stay sharp in the ever-evolving tech landscape.
                     </p>
                   </>
                 ) : (
