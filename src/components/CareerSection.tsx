@@ -3,6 +3,7 @@ import { SendHorizonal } from "lucide-react";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { easeOut } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 import DecryptedText from '../components/Animations/DecryptedText';
 
 
@@ -35,6 +36,12 @@ const seCareerHistory: careerHistory[] = [
 ];
 
 const ceCareerHistory: careerHistory[] = [
+  {
+    duration: "JANUARY 2022 – PRESENT",
+    role: "CIVIL ENGINEER, FREELANCE",
+    description: "Provides civil engineering consultancy services, including site supervision and property turnover inspection for various residential projects.",
+    skills: ["Site Inspection", "Punchlisting"]
+  },
   {
     duration: "MAY 2021 – NOVEMBER 2021",
     role: "PLANNING ENGINEER, DATEM INCORPORATED",
@@ -78,7 +85,7 @@ export const CareerSection = () => {
   return (
     <motion.section
       id="Career"
-      className="pt-24 pb-36 px-4 relative md:ml-12"
+      className="pt-24 pb-36 px-4 relative md:ml-12 lg:max-w-6xl lg:mx-auto"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 4, ease: "easeOut" }}
@@ -156,7 +163,7 @@ export const CareerSection = () => {
                     }}
                   >
                     <SendHorizonal className="text-accent-themed w-4 h-4" />
-                    <a href="#contact" className="font-gotham text-accent-themed text-sm ml-2">
+                    <a href="#Contact" className="font-gotham text-accent-themed text-sm ml-2">
                       Send me a message
                     </a>
                   </span>
@@ -166,43 +173,48 @@ export const CareerSection = () => {
           </div>
 
           {/* Card Section */}
-          <div ref={ref} className="overflow-y-auto max-h-[600px] md:-mt-6 md:ml-5 lg:mr-9">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={careerType}
-                variants={containerVariants}
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"}
-                exit="hidden"
-                transition={{ duration: 0.5 }}
-                className="flex flex-col min-h-[600px]"
-              >
-                <span className="text-accent-themed text-[18px] mb-4 lg:hidden font-gotham">Experience</span>
-                {(careerType === "SE" ? seCareerHistory : ceCareerHistory).map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    variants={cardVariants}
-                    className="md:p-8 card-hover mt-2 mb-4 md:my-0 flex gap-3 self-start"
-                  >
-                    <div className="w-1/5 font-gotham-light text-secondary text-[10px] md:text-[12px] mt-1">{item.duration}</div>
-                    <div className="w-4/5">
-                      <h4 className="font-gotham text-primary text-[14px] md:text-[16px]">{item.role}</h4>
-                      <p className="text-secondary font-gotham-light text-[13px] mt-2">{item.description}</p>
-                      <div className="flex flex-wrap gap-2 pt-2.5">
-                        {item.skills.map((skill, i) => (
-                          <span
-                            key={i}
-                            className="bg-secondary/10 text-primary font-gotham-light px-3 py-1.5 rounded-full text-xs"
-                          >
-                            {skill}
-                          </span>
-                        ))}
+          <div className="relative">
+            <div ref={ref} className="overflow-y-auto max-h-[600px] md:-mt-6 md:ml-5 lg:mr-9">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={careerType}
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate={inView ? "visible" : "hidden"}
+                  exit="hidden"
+                  transition={{ duration: 0.5 }}
+                  className="flex flex-col min-h-[600px]"
+                >
+                  <span className="text-accent-themed text-[18px] mb-4 lg:hidden font-gotham">Experience</span>
+                  {(careerType === "SE" ? seCareerHistory : ceCareerHistory).map((item, idx) => (
+                    <motion.div
+                      key={idx}
+                      variants={cardVariants}
+                      className="md:p-8 card-hover mt-2 mb-4 md:my-0 flex gap-3 self-start"
+                    >
+                      <div className="w-1/5 font-gotham-light text-secondary text-[10px] md:text-[12px] mt-1">{item.duration}</div>
+                      <div className="w-4/5">
+                        <h4 className="font-gotham text-primary text-[14px] md:text-[16px]">{item.role}</h4>
+                        <p className="text-secondary font-gotham-light text-[13px] mt-2">{item.description}</p>
+                        <div className="flex flex-wrap gap-2 pt-2.5">
+                          {item.skills.map((skill, i) => (
+                            <span
+                              key={i}
+                              className="bg-secondary/10 text-primary font-gotham-light px-3 py-1.5 rounded-full text-xs"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 pointer-events-none">
+              <ChevronDown className="w-4 h-4 text-accent-themed animate-fading-bounce" />
+            </div>
           </div>
         </div>
       </div>

@@ -9,6 +9,36 @@ export const ContactSection = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    if (!email || !message) {
+      toast.custom((t) => (
+        <div
+          className={`w-80 bg-background border border-red-500 rounded-md p-4 shadow-lg transition-all ${t.visible ? "animate-enter" : "animate-leave"
+            }`}
+        >
+          <div className="font-gotham font-semibold text-lg text-accent-themed">
+            Ooopps!
+          </div>
+          <p className="text-sm mt-1 text-foreground">
+            Kindly fill in both email and message.
+          </p>
+          <div className="mt-3 text-right">
+            <button
+              onClick={() => toast.dismiss(t.id)}
+              className="text-accent-themed text-sm hover:underline"
+            >
+              Dismiss
+            </button>
+          </div>
+        </div>
+      ));
+      return;
+    }
+
     setIsSubmitting(true);
 
     setTimeout(() => {

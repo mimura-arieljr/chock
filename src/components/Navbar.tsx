@@ -1,9 +1,12 @@
 import GithubIcon from '../assets/github.svg?react';
 import LinkedinIcon from '../assets/linkedin.svg?react';
 import InstagramIcon from '../assets/instagram.svg?react';
-import { ListFilter, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { classname } from '../lib/utils';
 import { useState } from 'react';
+import { useEffect } from 'react';
+import { ThemeToggle } from "./ThemeToggle";
 
 type navLinks = {
     name: string,
@@ -15,8 +18,8 @@ type socialLinks = navLinks & {
 };
 
 const navItems: navLinks[] = [
+    { name: "Home", href: "#Hero" },
     { name: "Career", href: "#Career" },
-    { name: "Details", href: "#Details" },
     { name: "Projects", href: "#Projects" },
     { name: "Contact", href: "#Contact" },
 ];
@@ -32,16 +35,52 @@ export const Navbar = () => {
     const [activeLink, setActiveLink] = useState<string | null>(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    useEffect(() => {
+    const sectionIds = navItems.map(item => item.href.replace('#', ''));
+    const sectionElements = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveLink(`#${entry.target.id}`);
+                }
+            });
+        },
+        {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.6,
+        }
+    );
+
+    sectionElements.forEach(el => observer.observe(el!));
+
+    return () => {
+        sectionElements.forEach(el => observer.unobserve(el!));
+    };
+}, []);
+
     return (
         <>
             <button
                 onClick={() => setIsMenuOpen((prev) => !prev)}
-                className="lg:hidden fixed top-10 md:top-16 right-5 h-6 text-primary z-10 transition-all hover:text-accent duration-300"
+                className="md:flex lg:hidden fixed right-5 top-10 md:top-16 h-6 text-primary z-50 transition-all hover:text-accent duration-300"
                 aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
             >
-                {isMenuOpen ? <X size={24} /> : <ListFilter size={24} />}
+                <AnimatePresence mode="wait" initial={false}>
+                    <motion.div
+                        key={isMenuOpen ? "close" : "menu"}
+                        initial={{ opacity: 0, rotate: -90, scale: 0.8 }}
+                        animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                        exit={{ opacity: 0, rotate: 90, scale: 0.8 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </motion.div>
+                </AnimatePresence>
             </button>
-            <nav className={classname("hidden lg:flex fixed left-12 top-35 h-3/4 opacity-100 z-40 transition-all duration-300")}>
+            <nav className={classname("fixed left-12 top-35 h-3/4 opacity-100 z-20 transition-all duration-300", "lg:flex hidden")}>
             {/* desktop nav */}
             <div className="h-full flex flex-col justify-between p-4">
                 <div className="hidden md:flex flex-col items-end space-x-6">
@@ -73,12 +112,13 @@ export const Navbar = () => {
                     ))}
                 </div>
             </div>
+            </nav>
 
             {/* mobile nav */}
             <div
                 className={classname(
-                    "fixed inset-0 bg-background/95 backdroup-blur-md z-40 flex flex-col items-center justify-center",
-                    "transition-all duration-300 md:hidden",
+                    "fixed inset-0 bg-background/95 backdroup-blur-md z-30 flex flex-col items-center justify-center",
+                    "transition-all duration-300",
                     isMenuOpen
                         ? "opacity-100 pointer-events-auto"
                         : "opacity-0 pointer-events-none"
@@ -104,8 +144,10 @@ export const Navbar = () => {
                         </a>
                     ))}
                 </div>
+                <div className="absolute bottom-5 right-5">
+                    <ThemeToggle />
+                </div>
             </div>
-        </nav>
         </>
     );
 };

@@ -69,7 +69,7 @@ export const HeroSection = () => {
                         <span className="relative overflow-hidden inline-block group">
                             <span className="absolute inset-0 bg-accent animate-sweep-border z-10" />
                             <span
-                                className="relative text-primary font-gotham text-[56px] md:text-[70px] lg:text-[90px]"
+                                className="relative text-primary font-gotham text-[34px] md:text-[70px] lg:text-[90px]"
                                 style={{
                                     opacity: 0,
                                     animation: 'fade-in 0.5s ease 1s forwards'
@@ -88,7 +88,7 @@ export const HeroSection = () => {
                                 animation: 'fade-in 0.5s ease 1s forwards'
                             }}>
                             <Braces className="text-secondary h-6 w-6 lg:h-14 lg:w-14" />
-                            <span className="text-primary ml-3 font-gotham text-[56px] md:text-[70px] lg:text-[90px]"
+                            <span className="text-primary ml-3 font-gotham text-[34px] md:text-[70px] lg:text-[90px]"
                             >
                                 {skills[currentTitleIndex]}
                             </span>
