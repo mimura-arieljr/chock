@@ -48,19 +48,21 @@ export const About = () => {
                         />
                     </motion.div>
                     <motion.div
-                        className="max-w-xl space-y-4 text-center md:text-left mt-5"
+                        className="max-w-xl space-y-4 text-left mt-5"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut", delay: 1 }}
                     >
                         <p className="font-gotham-light text-sm">
-                            I'm a creative developer who finds joy in combining design and code.
-                            Whether experimenting with animations or building thoughtful user interfaces,
-                            I strive to make digital experiences more human.
+                            I hold a degree in Civil Engineering from Mapúa University, one of the Philippines’ leading institutions for engineering education.
+                            Driven by a deep passion for technology, I transitioned into software engineering—where I found my true calling in creating, learning, and innovating.
                         </p>
                         <p className="font-gotham-light text-sm">
-                            Outside of tech, I enjoy music (as you can probably tell), coffee culture,
-                            and exploring new cities on foot.
+                            I take pride in my stength to quickly adapt to new technologies and frameworks, which has allowed me to thrive in the ever-evolving tech landscape.
+                        </p>
+                        <p className="font-gotham-light text-sm">
+                            In my free time, I enjoy working out and watching films. I love traveling, exploring different cultures,
+                            reading about anything!
                         </p>
                         <div className="flex justify-center md:justify-start pt-4">
                             <span className="flex items-center gap-4 pt-4 transition-colors relative overflow-hidden group">
