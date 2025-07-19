@@ -7,7 +7,6 @@ import { classname } from '../lib/utils';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { ThemeToggle } from "./ThemeToggle";
-import { Link } from 'react-router-dom';
 
 type navLinks = {
     name: string,
@@ -23,7 +22,6 @@ const navItems: navLinks[] = [
     { name: "Career", href: "#Career" },
     { name: "Projects", href: "#Projects" },
     { name: "Contact", href: "#Contact" },
-    { name: "About", href: "/about" }
 ];
 
 const socialLinks: socialLinks[] = [
@@ -87,43 +85,23 @@ export const Navbar = () => {
             <div className="h-full flex flex-col justify-between p-4">
                 <div className="hidden md:flex flex-col items-end space-x-6">
                     {navItems.map((item, key) => (
-                        item.href.startsWith('#') ? (
-                            <a
-                                key={key}
-                                href={item.href}
-                                onClick={() => setActiveLink(item.href)}
-                                className={classname(
-                                    "relative text-foreground/80 hover:text-accent transition-colors duration-1000 font-gotham text-sm md:text-[14px]",
-                                    "before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:w-[3px] before:h-full before:bg-[hsl(var(--accent))]",
-                                    (activeLink === item.href ? "before:scale-y-110" : "before:scale-y-0"),
-                                    "hover:before:scale-y-115 before:origin-top before:transition-transform"
-                                )}
-                                style={{
-                                    writingMode: 'vertical-rl',
-                                    transform: 'rotate(180deg)',
-                                }}
-                            >
-                                {item.name}
-                            </a>
-                        ) : (
-                            <Link
-                                key={key}
-                                to={item.href}
-                                onClick={() => setActiveLink(item.href)}
-                                className={classname(
-                                    "relative text-foreground/80 hover:text-accent transition-colors duration-1000 font-gotham text-sm md:text-[14px]",
-                                    "before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:w-[3px] before:h-full before:bg-[hsl(var(--accent))]",
-                                    (activeLink === item.href ? "before:scale-y-110" : "before:scale-y-0"),
-                                    "hover:before:scale-y-115 before:origin-top before:transition-transform"
-                                )}
-                                style={{
-                                    writingMode: 'vertical-rl',
-                                    transform: 'rotate(180deg)',
-                                }}
-                            >
-                                {item.name}
-                            </Link>
-                        )
+                        <a
+                            key={key}
+                            href={item.href}
+                            onClick={() => setActiveLink(item.href)}
+                            className={classname(
+                                "relative text-foreground/80 hover:text-accent transition-colors duration-1000 font-gotham text-sm md:text-[16px]",
+                                "before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:w-[3px] before:h-full before:bg-[hsl(var(--accent))]",
+                                (activeLink === item.href ? "before:scale-y-110" : "before:scale-y-0"),
+                                "hover:before:scale-y-115 before:origin-top before:transition-transform"
+                            )}
+                            style={{
+                                writingMode: 'vertical-rl',
+                                transform: 'rotate(180deg)',
+                            }}
+                        >
+                            {item.name}
+                        </a>
                     ))}
                 </div>
                 <div className="hidden md:flex  flex-col items-start space-y-4">
@@ -148,25 +126,14 @@ export const Navbar = () => {
             >
                 <div className="flex flex-col space-y-8 text-xl">
                     {navItems.map((item, key) => (
-                        item.href.startsWith('#') ? (
-                            <a
-                                key={key}
-                                href={item.href}
-                                className="hover:text-accent transition-colors duration-300"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                {item.name}
-                            </a>
-                        ) : (
-                            <Link
-                                key={key}
-                                to={item.href}
-                                className="hover:text-accent transition-colors duration-300"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                {item.name}
-                            </Link>
-                        )
+                        <a
+                            key={key}
+                            href={item.href}
+                            className="hover:text-accent transition-colors duration-300"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            {item.name}
+                        </a>
                     ))}
                 </div>
 

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import HeroIcon from '../assets/heroicon.svg?react';
 
 export const SiteIconComponent = () => {
@@ -36,9 +37,9 @@ export const SiteIconComponent = () => {
                 isVisible ? '' : 'animate-vanish-out'
             }`}
         >
-            <a href="#Hero">
+            <Link to="/about">
                 <HeroIcon className="pointer-events-auto h-7.5 w-7.5 md:h-15 md:w-15 fill-current hover:text-accent transition" />
-            </a>
+            </Link>
         </div>
     );
 };
