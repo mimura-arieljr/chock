@@ -91,7 +91,7 @@ export const Navbar = () => {
                             onClick={() => setActiveLink(item.href)}
                             className={classname(
                                 "relative text-foreground/80 hover:text-accent transition-colors duration-1000 font-gotham text-sm md:text-[16px]",
-                                "before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:w-[4px] before:h-full before:bg-[hsl(var(--accent))]",
+                                "before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:w-[3px] before:h-full before:bg-[hsl(var(--accent))]",
                                 (activeLink === item.href ? "before:scale-y-110" : "before:scale-y-0"),
                                 "hover:before:scale-y-115 before:origin-top before:transition-transform"
                             )}

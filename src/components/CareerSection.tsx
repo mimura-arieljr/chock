@@ -11,7 +11,8 @@ type careerHistory = {
   duration: string,
   role: string,
   description: string,
-  skills: string[]
+  skills: string[],
+  link: string
 }
 
 const seCareerHistory: careerHistory[] = [
@@ -19,19 +20,22 @@ const seCareerHistory: careerHistory[] = [
     duration: "SEPTEMBER 2023 – PRESENT",
     role: "SOFTWARE ENGINEER, NCS GROUP",
     description: "Developed an AWS-based orchestrator for migrating 300K+ customers and designed APIs to integrate phone services with wearable devices. Maintained legacy ColdFusion systems and resolved critical incidents during on-call rotations.",
-    skills: ["Typescript", "AWS", "Microservices", "ColdFusion", "NodeJS", "MySQL", "NoSQL", "Docker"]
+    skills: ["Typescript", "AWS", "Microservices", "ColdFusion", "NodeJS", "MySQL", "NoSQL", "Docker"],
+    link: "https://www.ncs.co/en-sg/"
   },
   {
     duration: "SEPTEMBER 2022 – SEPTEMBER 2023",
     role: "SOFTWARE ENGINEER, NLP LOGIX",
     description: "Optimized over 200 RPA bots and built automation solutions in Python/C#. Leveraged Azure for deployments and SQL for data analysis while scripting Python tools to streamline workflows.",
-    skills: ["Python", "Azure", "Automation", "C#", ".NET", "MSSQL", "NoSQL"]
+    skills: ["Python", "Azure", "Automation", "C#", ".NET", "MSSQL", "NoSQL"],
+    link: "https://nlplogix.com/"
   },
   {
     duration: "NOVEMBER 2021 – SEPTEMBER 2022",
     role: "SOFTWARE ENGINEER, POINTWEST INNOVATIONS CORPORATION",
     description: "Built a Xamarin-based mobile app with localization support and contributed to full-stack web development using ReactJS and .NET. Successfully deployed an iOS application to the App Store.",
-    skills: ["C#", ".NET", "React", "Xamarin", "MSSQL"]
+    skills: ["C#", ".NET", "React", "Xamarin", "MSSQL"],
+    link: "https://pointwest.com/"
   }
 ];
 
@@ -40,19 +44,22 @@ const ceCareerHistory: careerHistory[] = [
     duration: "JANUARY 2022 – PRESENT",
     role: "CIVIL ENGINEER, FREELANCE",
     description: "Provides civil engineering consultancy services, including site supervision and property turnover inspection for various residential projects.",
-    skills: ["Site Inspection", "Punchlisting"]
+    skills: ["Site Inspection", "Punchlisting"],
+    link: ""
   },
   {
     duration: "MAY 2021 – NOVEMBER 2021",
     role: "PLANNING ENGINEER, DATEM INCORPORATED",
     description: "Develops project timelines and milestones, tracks critical activities to mitigate delays, and implements recovery plans or time extension claims when necessary.",
-    skills: ["AutoCAD", "PrimaveraP6", "Project Planning", "EOT", "Vertical Construction"]
+    skills: ["AutoCAD", "PrimaveraP6", "Project Planning", "EOT", "Vertical Construction"],
+    link: "https://www.datem.com.ph/"
   },
   {
     duration: "JANUARY 2020 – MAY 2021",
     role: "PROJECT AND SALES ENGINEER, BMB STEEL PHILIPPINES",
     description: "Secures new projects through client meetings and company marketing, while overseeing awarded projects from tender to completion to ensure successful delivery.",
-    skills: ["AutoCAD", "Sales Engineering", "Project Management"]
+    skills: ["AutoCAD", "Sales Engineering", "Project Management"],
+    link: "https://bmbsteel.com.vn/en"
   }
 ];
 
@@ -184,8 +191,11 @@ export const CareerSection = () => {
                 >
                   <span className="text-accent-themed text-[18px] mb-4 lg:hidden font-gotham">Experience</span>
                   {(careerType === "SE" ? seCareerHistory : ceCareerHistory).map((item, idx) => (
-                    <motion.div
+                    <motion.a
                       key={idx}
+                      href={item.link || undefined}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       variants={cardVariants}
                       className="md:p-8 card-hover mt-2 mb-4 md:my-0 flex gap-3 self-start"
                     >
@@ -204,7 +214,7 @@ export const CareerSection = () => {
                           ))}
                         </div>
                       </div>
-                    </motion.div>
+                    </motion.a>
                   ))}
                 </motion.div>
               </AnimatePresence>
