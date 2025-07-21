@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import { SendHorizonal } from "lucide-react";
+import { Download, ChevronDown } from "lucide-react";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { easeOut } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import DecryptedText from '../components/Animations/DecryptedText';
 
 
@@ -166,9 +165,12 @@ export const CareerSection = () => {
                       animation: 'fade-in 0.5s ease 1s forwards'
                     }}
                   >
-                    <SendHorizonal className="text-accent-themed w-4 h-4" />
-                    <a href="#Contact" className="font-gotham text-accent-themed text-sm ml-2">
-                      Send me a message
+                    <Download className="text-accent-themed w-4 h-4" />
+                    <a href="https://drive.google.com/uc?export=download&id=1ArAiD9OLfm-IqmIo5ab6yZM5zHogSlGW" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-gotham text-accent-themed text-sm ml-2">
+                      Download résumé
                     </a>
                   </span>
                 </span>
