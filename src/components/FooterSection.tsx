@@ -4,7 +4,7 @@ import GradientText from '../components/Animations/GradientText'
 
 export const Footer = () => {
   return (
-    <footer className="py-12 px-4 relative mt-12 pt-8 text-[16px] text-center">
+    <footer className="py-12 px-4 relative mt-20 pt-8 text-[16px] text-center">
       <div className="flex flex-col items-center gap-4">
         <p className="font-gotham-light flex flex-wrap justify-center items-center gap-1">
           <span className="text-secondary">&copy; {new Date().getFullYear()} Ariel Jr Mimura.</span>
