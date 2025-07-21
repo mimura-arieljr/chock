@@ -71,14 +71,14 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="Contact" className="min-h-screen flex items-center justify-center px-4">
+    <section id="Contact" className="min-h-[500px] flex items-center justify-center px-4">
       <div className="max-w-xl w-full flex flex-col gap-y-8">
         <h2 className="text-[25px] md:text-[36px] font-gotham mb-6 text-primary text-start">
           <DecryptedText
             text="Say hello"
             characters="アイサツヲスル"
             animateOn="view"
-            revealDirection="center"
+            revealDirection="start"
           />
         </h2>
         <div>

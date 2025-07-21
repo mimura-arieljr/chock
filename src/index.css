@@ -269,11 +269,22 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%)
+  }
+  to {
+    transform: translateX(-50%)
   }
 }
 
@@ -441,6 +452,17 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient 8s linear infinite;
+}
+
+@utility animate-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  animation: marquee 15s linear infinite
+}
+
+@utility menu-underline {
+  box-shadow: 0 -1px 0 0 hsl(var(--accent-themed));
 }
 
 #root {

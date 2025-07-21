@@ -95,7 +95,7 @@ export const CareerSection = () => {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 4, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.4 }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl z-10">
         <h2 className="text-3xl md:text-4xl font-gotham text-primary mb-12 text-start">
@@ -103,7 +103,7 @@ export const CareerSection = () => {
             text="Career Background"
             characters="ショクムケイレキ"
             animateOn="view"
-            revealDirection="center"
+            revealDirection="start"
           />
         </h2>
 
@@ -133,6 +133,7 @@ export const CareerSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -30 }}
                 transition={{ duration: 0.5 }}
+                viewport={{ once: false, amount: 0.4 }}
                 className="space-y-6"
               >
                 {careerType === "SE" ? (
@@ -189,6 +190,7 @@ export const CareerSection = () => {
                   animate={inView ? "visible" : "hidden"}
                   exit="hidden"
                   transition={{ duration: 0.5 }}
+                  viewport={{ once: false, amount: 0.4 }}
                   className="flex flex-col min-h-[600px]"
                 >
                   <span className="text-accent-themed text-[18px] mb-4 lg:hidden font-gotham">Experience</span>
