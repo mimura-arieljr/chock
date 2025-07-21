@@ -32,14 +32,15 @@ export const SiteIconComponent = () => {
     if (!shouldRender) return null;
 
     return (
-        <div
-            className={`fixed right-19 px-1 top-10 md:left-12 md:top-15 z-50 transition-all duration-300 ${
+        <Link
+            to="/about"
+            aria-label="Go to about"
+            className={`fixed right-19 top-10 md:left-12 md:top-15 z-50 transition-all duration-300 ${
                 isVisible ? '' : 'animate-vanish-out'
             }`}
+            style={{ width: 'fit-content', height: 'fit-content' }}
         >
-            <Link to="/about">
-                <HeroIcon className="pointer-events-auto h-7.5 w-7.5 md:h-15 md:w-15 fill-current hover:text-accent transition" />
-            </Link>
-        </div>
+            <HeroIcon className="h-7.5 w-7.5 md:h-15 md:w-15 fill-current hover:text-accent transition" />
+        </Link>
     );
 };
