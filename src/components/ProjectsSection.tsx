@@ -18,12 +18,12 @@ export const ProjectsSection = () => {
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: 'easeOut' }}
-        viewport={{ once: false, amount: 0.4 }}
       >
         <DecryptedText
           text="Projects"
           characters="ショクムケイレキ"
           animateOn="view"
+          speed={200}
           revealDirection="start"
         />
       </motion.h2>
@@ -32,8 +32,7 @@ export const ProjectsSection = () => {
         style={{ height: '400px', position: 'relative' }}
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.25, ease: 'easeOut' }}
-        viewport={{ once: false, amount: 0.4 }}
+        transition={{ duration: 1, ease: 'easeOut' }}
       >
         <FlowingMenu items={projectItems} />
       </motion.div>
