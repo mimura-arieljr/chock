@@ -102,7 +102,7 @@ export const CareerSection = () => {
             text="Career Background"
             characters="ショクムケイレキ"
             animateOn="view"
-            speed={200}
+            speed={150}
             revealDirection="start"
           />
         </h2>

@@ -23,7 +23,7 @@ export const ProjectsSection = () => {
           text="Projects"
           characters="ショクムケイレキ"
           animateOn="view"
-          speed={200}
+          speed={150}
           revealDirection="start"
         />
       </motion.h2>

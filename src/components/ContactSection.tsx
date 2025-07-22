@@ -78,7 +78,7 @@ export const ContactSection = () => {
             text="Say hello"
             characters="アイサツヲスル"
             animateOn="view"
-            speed={200}
+            speed={150}
             revealDirection="start"
           />
         </h2>
