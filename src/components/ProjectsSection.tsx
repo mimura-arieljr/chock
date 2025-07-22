@@ -3,10 +3,10 @@ import FlowingMenu from './Animations/FlowingMenu';
 import DecryptedText from './Animations/DecryptedText';
 
 const projectItems = [
-  { link: '#', text: 'SHABANI', image: '/assets/m0.jpeg' },
-  { link: '#', text: 'KIYOMASA', image: '/assets/m1.jpeg' },
-  { link: '#', text: 'ANNIE', image: '/assets/m2.jpeg' },
-  { link: '#', text: 'NENE', image: '/assets/m3.jpeg' }
+  { link: '/404', text: 'SHABANI', image: '/assets/m0.jpeg' },
+  { link: '/404', text: 'KIYOMASA', image: '/assets/m1.jpeg' },
+  { link: '/404', text: 'ANNIE', image: '/assets/m2.jpeg' },
+  { link: '/404', text: 'NENE', image: '/assets/m3.jpeg' }
 ];
 
 
