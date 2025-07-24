@@ -11,7 +11,7 @@ export const NotFound = () => {
                             animation: 'reveal-in 0.6s ease 0.5s forwards'
                         }}
                     >
-                        <FuzzyText fontSize="clamp(1.5rem, 10vw, 7rem)" baseIntensity={0.2} hoverIntensity={0.7} enableHover={true}>
+                        <FuzzyText fontSize="clamp(2.75rem, 15vw, 8rem)" baseIntensity={0.2} hoverIntensity={0.7} enableHover={true}>
                             404
                         </FuzzyText>
                     </p>
@@ -21,7 +21,7 @@ export const NotFound = () => {
                             animation: 'reveal-in 0.6s ease 1s forwards'
                         }}
                     >
-                        <FuzzyText fontSize="clamp(1rem, 4vw, 3.5rem)" baseIntensity={0.2} hoverIntensity={0.7} enableHover={true}>
+                        <FuzzyText fontSize="clamp(1.75rem, 8vw, 4.5rem)" baseIntensity={0.2} hoverIntensity={0.7} enableHover={true}>
                             NOT FOUND
                         </FuzzyText>
                     </p>
