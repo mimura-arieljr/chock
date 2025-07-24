@@ -12,7 +12,9 @@ const projectItems = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="lg:max-w-5xl md:mt-8 px-4 lg:px-8 mx-auto min-h-[700px]">
+    <section 
+    id="Projects"
+    className="lg:max-w-5xl md:mt-8 px-4 lg:px-8 mx-auto min-h-[700px]">
       <motion.h2
         className="text-3xl md:text-4xl font-gotham text-primary mb-12 text-start"
         initial={{ opacity: 0, y: 60 }}

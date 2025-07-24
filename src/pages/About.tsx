@@ -55,7 +55,7 @@ export const About = () => {
                     >
                         <p className="font-gotham-light text-sm">
                             I hold a degree in Civil Engineering from Mapúa University, one of the Philippines’ leading institutions for engineering education.
-                            Driven by a deep passion for technology, I transitioned into software engineering—where I found my true calling in creating, learning, and innovating.
+                            Driven by a deep passion for technology, I transitioned into software engineering, where I found my true calling in creating, learning, and innovating.
                         </p>
                         <p className="font-gotham-light text-sm">
                             I take pride in my stength to quickly adapt to new technologies and frameworks, which has allowed me to thrive in the ever-evolving tech landscape.
