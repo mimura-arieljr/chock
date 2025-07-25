@@ -36,30 +36,35 @@ export const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
-    const sectionIds = navItems.map(item => item.href.replace('#', ''));
-    const sectionElements = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+        const timeout = setTimeout(() => {
+            const sectionIds = navItems.map(item => item.href.replace('#', ''));
+            const sectionElements = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setActiveLink(`#${entry.target.id}`);
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setActiveLink(`#${entry.target.id}`);
+                        }
+                    });
+                },
+                {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.6,
                 }
-            });
-        },
-        {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.6,
-        }
-    );
+            );
 
-    sectionElements.forEach(el => observer.observe(el!));
+            sectionElements.forEach(el => observer.observe(el!));
 
-    return () => {
-        sectionElements.forEach(el => observer.unobserve(el!));
-    };
-}, []);
+            // Store observer and elements to clean up later
+            return () => {
+                sectionElements.forEach(el => observer.unobserve(el!));
+            };
+        }, 500); // Delay to allow lazy-loaded content to mount
+
+        return () => clearTimeout(timeout);
+    }, []);
 
     return (
         <>
