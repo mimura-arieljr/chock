@@ -9,7 +9,7 @@ const Footer = () => {
         <p className="font-gotham-light flex flex-wrap justify-center items-center gap-1">
           <span className="text-secondary">&copy; {new Date().getFullYear()} Ariel Jr Mimura.</span>
           <a
-            href=""
+            href="/texts/build-instruction.txt"
             className="text-primary hover:animate-pulse transition-all gradient-text"
           >
             <GradientText

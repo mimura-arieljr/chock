@@ -1,0 +1,152 @@
+Personal Portfolio (React + Vite + Tailwind)
+
+Overview
+--------
+A static personal portfolio web app built using:
+
+- React (frontend framework)
+- Vite (fast build tool)
+- TypeScript / JavaScript
+- Tailwind CSS for styling
+- Deployed to AWS S3 (with CloudFront + Route 53)
+
+Includes:
+- Personal info
+- Projects
+- Career/experience
+- Education
+- Skills / Tech Stack
+
+Deployment Decision
+-------------------
+
+Preferred: AWS S3 + CloudFront + Route53
+- Static site hosting (perfect for React builds)
+- Very low cost
+- Fast global delivery via CDN
+- Easy custom domain + HTTPS (ACM)
+- Minimal maintenance
+
+Alternative: AWS Amplify
+- Git-based CI/CD deploys
+- Branch previews
+- Built-in domain + HTTPS
+
+Not Recommended:
+- EC2 / Lightsail / Elastic Beanstalk / Lambda (overkill for a static React app)
+
+AWS S3 Deployment Steps
+-----------------------
+1. Create S3 bucket
+2. Upload `dist/` build output
+3. Enable public read access via Bucket Policy
+4. Enable static site hosting
+5. Set both Index and Error document to `index.html`
+6. Use CloudFront + ACM for HTTPS
+7. Use Route53 for custom domain
+
+Project Initialization (Vite)
+-----------------------------
+
+Why Vite over Create-React-App?
+- Faster dev server
+- Smaller production builds (via Rollup)
+- Simpler configuration
+
+Commands:
+---------
+npm create vite@latest my-portfolio -- --template react
+npm install
+npm run dev       # Dev server
+npm run build     # Production build
+npm run preview   # Local preview of production build
+
+Tailwind Setup:
+---------------
+npm install tailwindcss @tailwindcss/vite
+(Add to vite.config.js and import in index.css)
+
+Key Dependencies
+----------------
+npm install lucide-react react-router-dom tailwind-merge
+npm install @radix-ui/react-toast class-variance-authority clsx
+npm install -D vite-plugin-svgr
+npm install framer-motion react-intersection-observer
+
+Sample Reactbits Components:
+--------------------
+npx jsrepo add https://reactbits.dev/ts/tailwind/TextAnimations/FuzzyText
+npx jsrepo add https://reactbits.dev/ts/tailwind/TextAnimations/DecryptedText
+
+
+Production Build Optimizations
+------------------------------
+The site was initially built without lazy loading and on bundled on single JS file. This becomes unoptimal
+as the site becomes larger with more dependencies. As a result, I did the steps below to optimize the build and 
+ensure fast website loading.
+
+1. Manual Chunking (vite.config.ts)
+   Purpose: Split large libraries (React, Router, GSAP, Framer Motion) for smaller main bundle and better caching.
+   Example:
+   build: {
+     rollupOptions: {
+       output: {
+         manualChunks: {
+           react: ['react', 'react-dom'],
+           router: ['react-router-dom'],
+           framer: ['framer-motion'],
+           gsap: ['gsap']
+         }
+       }
+     }
+   }
+
+2. Lazy Loading Page Sections
+   Purpose: Defer rendering of below-the-fold sections to reduce initial bundle.
+   Example:
+   const CareerSection = lazy(() => import("../components/CareerSection"));
+   <Suspense fallback={<div>Loading...</div>}>
+     <CareerSection />
+   </Suspense>
+
+3. Bundle Visualization
+   Tool: rollup-plugin-visualizer
+
+   Install:
+   npm install --save-dev rollup-plugin-visualizer
+
+   vite.config.ts:
+   import { visualizer } from 'rollup-plugin-visualizer';
+   plugins: [react(), visualizer({ filename: 'stats.html' })]
+
+   Usage:
+   npm run build && open dist/stats.html
+
+4. Result:
+   - Main bundle reduced from 514 kB → 264 kB
+   - Page sections lazy-loaded
+   - Libraries split into chunks (cached separately)
+
+Libraries & Tools Used
+----------------------
+- React + Vite + TypeScript
+- Tailwind CSS + tailwind-merge
+- Framer Motion (animations)
+- React Router
+- Lucide Icons
+- Radix UI + clsx + cva
+- react-hot-toast
+- SVGR Plugin for SVGs
+- rollup-plugin-visualizer
+
+Portfolio was heavily inspired by the following amazing people
+--------------------------------------------------------------
+Hamish Williams
+Brittany Chang
+Pedro Machado
+
+References
+----------
+- Kirokaze GIFs: https://www.deviantart.com/kirokaze/gallery?page=5
+- Lucide Icons: https://lucide.dev/icons/
+- Reddit Thread: https://www.reddit.com/r/webdev/comments/112r7m5/whats_the_best_portfolio_website_youve_ever_seen/
