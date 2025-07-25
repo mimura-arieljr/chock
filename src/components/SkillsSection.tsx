@@ -12,9 +12,11 @@ import Python from '../assets/technologies/python.svg?react';
 import CSharp from '../assets/technologies/c.svg?react';
 import NodeJS from '../assets/technologies/nodedotjs.svg?react';
 import DotNet from '../assets/technologies/dotnet.svg?react';
-import AWS from '../assets/technologies/html5.svg?react';
+import AWS from '../assets/technologies/aws.svg?react';
+import Azure from '../assets/technologies/azure.svg?react';
 import Docker from '../assets/technologies/docker.svg?react';
 import MySQL from '../assets/technologies/mysql.svg?react';
+import Database from '../assets/technologies/database.svg?react'
 import ReactIcon from '../assets/technologies/reacticon.svg?react';
 import Git from '../assets/technologies/git.svg?react';
 import Figma from '../assets/technologies/figma.svg?react';
@@ -29,10 +31,12 @@ const skills = [
     { name: "Bootstrap", icon: Bootstrap, category: ["Web"] },
     { name: "Tailwind", icon: Tailwind, category: ["Web"] },
     { name: "Node.js", icon: NodeJS, category: ["Web", "Frameworks"] },
-    { name: ".NET", icon: DotNet, category: ["Web"] },
+    { name: ".NET", icon: DotNet, category: ["Frameworks"] },
     { name: "AWS", icon: AWS, category: ["Cloud"] },
-    { name: "Docker", icon: Docker, category: ["Cloud"] },
+    { name: "Azure", icon: Azure, category: ["Cloud"] },
+    { name: "Docker", icon: Docker, category: ["Tools"] },
     { name: "MySQL", icon: MySQL, category: ["Databases"] },
+    { name: "MsSQL", icon: Database, category: ["Databases"] },
     { name: "React", icon: ReactIcon, category: ["Frameworks"] },
     { name: "Git", icon: Git, category: ["Tools"] },
     { name: "Figma", icon: Figma, category: ["Tools"] },
@@ -57,7 +61,7 @@ export const SkillsSection = () => {
             skill.category.includes(activeCategory)
     );
     return (
-        <section id="skills" className="max-w-4xl mx-5 md:mx-auto py-10 relative">
+        <section id="skills" className="max-w-4xl mx-5 md:mx-auto py-10 relative min-h-screen">
             <motion.h2
                 className="text-3xl md:text-4xl font-gotham text-primary mb-12 text-start"
                 initial={{ opacity: 0, y: 20 }}
@@ -80,9 +84,10 @@ export const SkillsSection = () => {
             {/* Dropdown for small screens */}
             <div className="mb-6 block md:hidden">
                 <select
+                    name="Skill Category"
                     value={activeCategory}
                     onChange={(e) => setActiveCategory(e.target.value)}
-                    className="flex justify-self-end px-4 py-2 text-sm font-gotham"
+                    className="flex justify-self-end py-2 text-sm font-gotham"
                 >
                     {categories.map((category) => (
                         <option key={category} value={category}>
