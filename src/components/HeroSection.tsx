@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Mouse, Braces } from "lucide-react";
 import { useEffect, useState } from "react";
 import { classname } from "../lib/utils";

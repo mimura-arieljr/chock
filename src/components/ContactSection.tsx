@@ -4,7 +4,7 @@ import DecryptedText from '../components/Animations/DecryptedText';
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-export const ContactSection = () => {
+const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: any) => {
@@ -118,3 +118,5 @@ export const ContactSection = () => {
     </section>
   );
 };
+
+export default ContactSection;

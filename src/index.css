@@ -47,6 +47,7 @@
   --color-secondary: hsl(var(--secondary));
   --color-accent: hsl(var(--accent));
   --color-accent-themed: hsl(var(--accent-themed));
+  --color-accent-word-themed: hsl(var(--accent-word-themed));
   --color-primary-foreground: hsl(var(--primary-foreground));
 
   --color-card: hsl(var(--card));
@@ -301,6 +302,7 @@
 
     --accent: 180 100% 50%;
     --accent-themed: 180 100% 50%;
+    --accent-word-themed: 180 100% 50%;
 
     --border: 217 33% 20%;
   }
@@ -317,6 +319,7 @@
 
     --accent: 180 100% 50%;
     --accent-themed: 0 0% 10%;
+    --accent-word-themed: 188 100% 47%;
 
     --border: 214 32% 91%;
   }

@@ -64,11 +64,11 @@ export const SelfSection = () => {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 1 }}
                     >
                         <p className="font-gotham-light text-sm">
-                            I hold a degree in Civil Engineering from <span className="text-accent">Mapúa University</span>, one of the Philippines’ leading institutions for engineering education.
-                            Driven by a deep passion for technology, I transitioned into <span className="text-accent">Software engineering</span>, where I found my true calling in creating, learning, and innovating.
+                            I hold a degree in Civil Engineering from <span className="text-accent-word-themed">Mapúa University</span>, one of the Philippines’ leading institutions for engineering education.
+                            Driven by a deep passion for technology, I transitioned into <span className="text-accent-word-themed">Software engineering</span>, where I found my true calling in creating, learning, and innovating.
                         </p>
                         <p className="font-gotham-light text-sm">
-                            I take pride in my stength to <span className="text-accent">quickly adapt to new technologies and frameworks</span>, which has allowed me to thrive in the ever-evolving tech landscape.
+                            I take pride in my stength to <span className="text-accent-word-themed">quickly adapt to new technologies and frameworks</span>, which has allowed me to thrive in the ever-evolving tech landscape.
                         </p>
                         <p className="font-gotham-light text-sm">
                             In my free time, I enjoy working out and watching films. I love traveling, exploring different cultures,

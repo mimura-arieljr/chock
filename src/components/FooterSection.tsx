@@ -2,7 +2,7 @@ import { ChevronUp } from "lucide-react";
 import GradientText from '../components/Animations/GradientText'
 
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer className="py-12 px-4 relative mt-20 pt-8 text-[16px] text-center">
       <div className="flex flex-col items-center gap-4">
@@ -32,3 +32,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

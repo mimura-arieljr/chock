@@ -2,47 +2,40 @@ import { useState } from "react";
 import { motion } from 'framer-motion';
 import DecryptedText from "./Animations/DecryptedText";
 // Icons
-import HTML from '../assets/html5.svg?react';
-import CSS from '../assets/css.svg?react';
-import JavaScript from '../assets/javascript.svg?react';
-import TypeScript from '../assets/typescript.svg?react';
-import Python from '../assets/python.svg?react';
-import CSharp from '../assets/c.svg?react';
-import NodeJS from '../assets/nodedotjs.svg?react';
-import DotNet from '../assets/dotnet.svg?react';
-import AWS from '../assets/html5.svg?react';
-import Docker from '../assets/docker.svg?react';
-import MySQL from '../assets/mysql.svg?react';
-import ReactIcon from '../assets/react.svg?react';
-import Git from '../assets/git.svg?react';
-import Figma from '../assets/figma.svg?react';
+import HTML from '../assets/technologies/html5.svg?react';
+import CSS from '../assets/technologies/css.svg?react';
+import Bootstrap from '../assets/technologies/bootstrap.svg?react';
+import Tailwind from '../assets/technologies/tailwindcss.svg?react';
+import JavaScript from '../assets/technologies/javascript.svg?react';
+import TypeScript from '../assets/technologies/typescript.svg?react';
+import Python from '../assets/technologies/python.svg?react';
+import CSharp from '../assets/technologies/c.svg?react';
+import NodeJS from '../assets/technologies/nodedotjs.svg?react';
+import DotNet from '../assets/technologies/dotnet.svg?react';
+import AWS from '../assets/technologies/html5.svg?react';
+import Docker from '../assets/technologies/docker.svg?react';
+import MySQL from '../assets/technologies/mysql.svg?react';
+import ReactIcon from '../assets/technologies/reacticon.svg?react';
+import Git from '../assets/technologies/git.svg?react';
+import Figma from '../assets/technologies/figma.svg?react';
 
 const skills = [
-    // Languages
-    { name: "Python", icon: Python, category: "Languages" },
-    { name: "C#", icon: CSharp, category: "Languages" },
-    { name: "TypeScript", icon: TypeScript, category: "Languages" },
-
-    // Web Development
-    { name: "HTML", icon: HTML, category: "Web" },
-    { name: "CSS", icon: CSS, category: "Web" },
-    { name: "JavaScript", icon: JavaScript, category: "Web" },
-    { name: "Node.js", icon: NodeJS, category: "Web" },
-    { name: ".NET", icon: DotNet, category: "Web" },
-
-    // Cloud
-    { name: "AWS", icon: AWS, category: "Cloud" },
-    { name: "Docker", icon: Docker, category: "Cloud" },
-
-    // Databases
-    { name: "MySQL", icon: MySQL, category: "Databases" },
-
-    // Frameworks/Libraries
-    { name: "React", icon: ReactIcon, category: "Frameworks" },
-
-    // Tools
-    { name: "Git", icon: Git, category: "Tools" },
-    { name: "Figma", icon: Figma, category: "Tools" },
+    { name: "Python", icon: Python, category: ["Languages"] },
+    { name: "C#", icon: CSharp, category: ["Languages"] },
+    { name: "TypeScript", icon: TypeScript, category: ["Languages", "Web"] },
+    { name: "JavaScript", icon: JavaScript, category: ["Languages", "Web"] },
+    { name: "HTML", icon: HTML, category: ["Web"] },
+    { name: "CSS", icon: CSS, category: ["Web"] },
+    { name: "Bootstrap", icon: Bootstrap, category: ["Web"] },
+    { name: "Tailwind", icon: Tailwind, category: ["Web"] },
+    { name: "Node.js", icon: NodeJS, category: ["Web", "Frameworks"] },
+    { name: ".NET", icon: DotNet, category: ["Web"] },
+    { name: "AWS", icon: AWS, category: ["Cloud"] },
+    { name: "Docker", icon: Docker, category: ["Cloud"] },
+    { name: "MySQL", icon: MySQL, category: ["Databases"] },
+    { name: "React", icon: ReactIcon, category: ["Frameworks"] },
+    { name: "Git", icon: Git, category: ["Tools"] },
+    { name: "Figma", icon: Figma, category: ["Tools"] },
 ];
 
 const categories = [
@@ -59,7 +52,9 @@ export const SkillsSection = () => {
     const [activeCategory, setActiveCategory] = useState("All");
 
     const filteredSkills = skills.filter(
-        (skill) => activeCategory === "All" || skill.category === activeCategory
+        (skill) =>
+            activeCategory.toLowerCase() === "all" ||
+            skill.category.includes(activeCategory)
     );
     return (
         <section id="skills" className="max-w-4xl mx-5 md:mx-auto py-10 relative">

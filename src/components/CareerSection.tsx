@@ -62,7 +62,7 @@ const ceCareerHistory: careerHistory[] = [
   }
 ];
 
-export const CareerSection = () => {
+const CareerSection = () => {
   const [careerType, setCareerType] = useState<"SE" | "CE">("SE");
 
   const controls = useAnimation();
@@ -230,3 +230,5 @@ export const CareerSection = () => {
     </motion.section>
   );
 };
+
+export default CareerSection;
