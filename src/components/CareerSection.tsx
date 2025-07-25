@@ -222,7 +222,7 @@ export const CareerSection = () => {
               </AnimatePresence>
             </div>
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 pointer-events-none">
-              <ChevronDown className="w-4 h-4 text-accent-themed animate-fading-bounce" />
+              <ChevronDown className="w-6 h-6 text-accent-themed animate-fading-bounce" />
             </div>
           </div>
         </div>
