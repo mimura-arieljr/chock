@@ -18,14 +18,14 @@ const seCareerHistory: careerHistory[] = [
   {
     duration: "SEPTEMBER 2023 – PRESENT",
     role: "SOFTWARE ENGINEER, NCS GROUP",
-    description: "Developed an AWS-based orchestrator for migrating 300K+ customers and designed APIs to integrate phone services with wearable devices. Maintained legacy ColdFusion systems and resolved critical incidents during on-call rotations.",
+    description: "Engineered AWS-based solutions to migrate 400K+ customers and enable wearable-device integration for telecom services, delivering event-driven, serverless solutions with improved reliability and scalability. Supported critical incident resolution.",
     skills: ["Typescript", "AWS", "Microservices", "ColdFusion", "NodeJS", "MySQL", "NoSQL", "Docker"],
     link: "https://www.ncs.co/en-sg/"
   },
   {
     duration: "SEPTEMBER 2022 – SEPTEMBER 2023",
     role: "SOFTWARE ENGINEER, NLP LOGIX",
-    description: "Optimized over 200 RPA bots and built automation solutions in Python/C#. Leveraged Azure for deployments and SQL for data analysis while scripting Python tools to streamline workflows.",
+    description: "Supported 200+ RPA bots across multiple clients, improving reliability by 30% and delivering Python/C# automation solutions with Azure-backed monitoring, deployments, and direct client collaboration.",
     skills: ["Python", "Azure", "Automation", "C#", ".NET", "MSSQL", "NoSQL"],
     link: "https://nlplogix.com/"
   },
@@ -49,14 +49,14 @@ const ceCareerHistory: careerHistory[] = [
   {
     duration: "MAY 2021 – NOVEMBER 2021",
     role: "PLANNING ENGINEER, DATEM INCORPORATED",
-    description: "Develops project timelines and milestones, tracks critical activities to mitigate delays, and implements recovery plans or time extension claims when necessary.",
+    description: "Developed project timelines and milestones, tracked critical activities to mitigate delays, and implemented recovery plans or time extension claims when necessary.",
     skills: ["AutoCAD", "PrimaveraP6", "Project Planning", "EOT", "Vertical Construction"],
     link: "https://www.datem.com.ph/"
   },
   {
     duration: "JANUARY 2020 – MAY 2021",
     role: "PROJECT AND SALES ENGINEER, BMB STEEL PHILIPPINES",
-    description: "Secures new projects through client meetings and company marketing, while overseeing awarded projects from tender to completion to ensure successful delivery.",
+    description: "Secured new projects through client meetings and company marketing, while overseeing awarded projects from tender to completion to ensure successful delivery.",
     skills: ["AutoCAD", "Sales Engineering", "Project Management"],
     link: "https://bmbsteel.com.vn/en"
   }
@@ -138,7 +138,7 @@ const CareerSection = () => {
                 {careerType === "SE" ? (
                   <>
                     <p className="font-gotham-light text-sm">
-                      I'm a passionate software engineer who enjoys solving complex problems with clean, maintainable code. I specialize in full-stack development, building scalable systems, and delivering reliable software solutions.
+                      I'm a passionate software engineer who enjoys solving complex problems with clean, maintainable code. I specialize in full-stack development, building cloud-native, scalable systems, and delivering reliable software solutions.
                     </p>
                     <p className="font-gotham-light text-sm">
                       I’m deeply curious and committed to continuous learning, especially in areas like cloud infrastructure and automation. I actively explore new tools and techniques to stay sharp in the ever-evolving tech landscape.
@@ -166,7 +166,7 @@ const CareerSection = () => {
                     }}
                   >
                     <Download className="text-accent-themed w-4 h-4" />
-                    <a href="https://drive.google.com/uc?export=download&id=1ArAiD9OLfm-IqmIo5ab6yZM5zHogSlGW" 
+                    <a href="https://drive.google.com/uc?export=download&id=1GQin0aM8s3BJkd6VeFBN6qGH5MvxQVXb" 
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-gotham text-accent-themed text-sm ml-2">
