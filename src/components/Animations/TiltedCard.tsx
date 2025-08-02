@@ -53,6 +53,7 @@ export default function TiltedCard({
   });
 
   const [lastY, setLastY] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   function handleMouse(e: React.MouseEvent<HTMLElement>) {
     if (!ref.current) return;
@@ -116,10 +117,16 @@ export default function TiltedCard({
           scale,
         }}
       >
+        {!isLoaded && (
+          <div className="absolute top-0 left-0 w-full h-full z-10 flex items-center justify-center bg-muted rounded-[15px]">
+            <div className="loader border-4 border-t-transparent border-accent rounded-full w-8 h-8 animate-spin" />
+          </div>
+        )}
         <motion.img
           src={imageSrc}
           alt={altText}
-          className="absolute top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)]"
+          onLoad={() => setIsLoaded(true)}
+          className={`absolute top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)] transition-opacity duration-300 ${isLoaded ? "opacity-100" : "opacity-0"}`}
           style={{
             width: imageWidth,
             height: imageHeight,
