@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
 import FlowingMenu from './Animations/FlowingMenu';
 import DecryptedText from './Animations/DecryptedText';
+import goodle from '../assets/goodle/goodle1.jpg';
 
 const projectItems = [
-  { link: '/project', text: 'SHABANI', image: '/assets/m0.jpeg' },
-  { link: '/project', text: 'KIYOMASA', image: '/assets/m1.jpeg' },
-  { link: '/project', text: 'ANNIE', image: '/assets/m2.jpeg' },
-  { link: '/project', text: 'NENE', image: '/assets/m3.jpeg' }
+  { link: '/project', text: 'GOODLE', image: goodle },
+  { link: '/project', text: 'KIYOMASA', image: goodle },
+  { link: '/project', text: 'SHABANI', image: goodle },
+  { link: '/project', text: 'NENE', image: goodle }
 ];
 
 
