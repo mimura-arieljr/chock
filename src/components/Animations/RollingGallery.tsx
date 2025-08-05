@@ -159,7 +159,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
               <img
                 src={url}
                 alt="gallery"
-                className="pointer-events-none h-[240px] w-[300px] rounded-[15px] border-[0.5px] border-accent-themed object-cover transition-transform duration-500 ease-out group-hover:scale-[1.75] sm:h-[130px] sm:w-[220px]"
+                className="pointer-events-none h-[240px] w-[300px] rounded-[15px] border-[0.5px] border-accent-themed object-cover transition-transform duration-500 ease-out group-hover:scale-[1.75] sm:h-[102px] sm:w-[198px]"
               />
             </div>
           ))}
