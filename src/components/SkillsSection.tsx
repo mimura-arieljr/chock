@@ -52,7 +52,7 @@ const categories = [
     "Tools"
 ];
 
-export const SkillsSection = () => {
+const SkillsSection = () => {
     const [activeCategory, setActiveCategory] = useState("All");
 
     const filteredSkills = skills.filter(
@@ -61,7 +61,7 @@ export const SkillsSection = () => {
             skill.category.includes(activeCategory)
     );
     return (
-        <section id="skills" className="max-w-4xl mx-5 md:mx-auto py-10 relative min-h-screen">
+        <section id="Skills" className="max-w-4xl mx-5 md:mx-auto relative min-h-screen">
             <motion.h2
                 className="text-3xl md:text-4xl font-gotham text-primary mb-12 text-start"
                 initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ export const SkillsSection = () => {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0 }}
             >
                 <DecryptedText
-                    text="Some stuff that I know"
+                    text="Technologies I know"
                     characters="こんにちは"
                     animateOn="view"
                     revealDirection="start"
@@ -135,3 +135,5 @@ export const SkillsSection = () => {
         </section>
     );
 };
+
+export default SkillsSection;

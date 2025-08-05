@@ -21,6 +21,7 @@ const navItems: navLinks[] = [
     { name: "Home", href: "#Hero" },
     { name: "Career", href: "#Career" },
     { name: "Projects", href: "#Projects" },
+    { name: "Skills", href: "#Skills" },
     { name: "Contact", href: "#Contact" },
 ];
 

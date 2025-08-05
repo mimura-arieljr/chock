@@ -1,25 +1,11 @@
 import { Undo2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Mouse } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import { classname } from '../lib/utils';
 import DecryptedText from '../components/Animations/DecryptedText';
 import TiltedCard from '../components/Animations/TiltedCard';
 
 
 export const SelfSection = () => {
-    const [isVisible, setIsVisible] = useState(true);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsVisible(window.scrollY < 10);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
     return (
         <div className="min-h-screen bg-background text-foreground px-4 py-12 flex flex-col justify-center items-center">
             <div className='flex flex-col'>
@@ -93,11 +79,6 @@ export const SelfSection = () => {
                         </div>
                     </motion.div>
                 </div>
-            </div>
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-fading-bounce">
-                <Mouse className={classname("h-7 w-7 text-secondary",
-                    isVisible ? "opacity-100" : "opacity-0"
-                )} />
             </div>
         </div>
     )
