@@ -127,7 +127,7 @@ const SkillsSection = () => {
                         viewport={{ once: true }}
                         className="p-2 flex flex-col items-center"
                     >
-                        <skill.icon className="w-14 h-14 mb-4 text-blue fill-current hover:text-accent transition-colors" />
+                        <skill.icon className="w-11 h-11 md:w-14 md:h-14 mb-4 text-blue fill-current hover:text-accent transition-colors" />
                         <h3 className="font-gotham-light text-[12px] text-center">{skill.name}</h3>
                     </motion.div>
                 ))}
