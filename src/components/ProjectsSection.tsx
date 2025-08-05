@@ -3,11 +3,18 @@ import FlowingMenu from './Animations/FlowingMenu';
 import DecryptedText from './Animations/DecryptedText';
 import goodle from '../assets/goodle/goodle1.jpg';
 
-const projectItems = [
-  { link: '/project', text: 'GOODLE', image: goodle },
-  { link: '/project', text: 'KIYOMASA', image: goodle },
-  { link: '/project', text: 'SHABANI', image: goodle },
-  { link: '/project', text: 'NENE', image: goodle }
+type ProjectItem = {
+  id: string,
+  link: string,
+  text: string,
+  image: string,
+}
+
+const projectItems: ProjectItem[] = [
+  { id: 'goodle', link: '/project/goodle', text: 'GOODLE', image: goodle },
+  { id: 'reveal', link: '/project/reveal', text: 'REVEAL', image: goodle },
+  { id:'shabani', link: '/project/shabani', text: 'SHABANI', image: goodle },
+  { id: 'nene', link: '/project/nene', text: 'NENE', image: goodle }
 ];
 
 
