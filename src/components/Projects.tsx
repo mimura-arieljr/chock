@@ -9,7 +9,14 @@ import goodle4 from '../assets/goodle/goodle4.jpg';
 import goodle5 from '../assets/goodle/goodle5.jpg';
 import goodle6 from '../assets/goodle/goodle6.jpg';
 import goodle7 from '../assets/goodle/goodle7.jpg';
-import RollingGallery from '../components/Animations/RollingGallery'
+import fibonifty1 from '../assets/fibonifty/fibonifty1.jpg';
+import fibonifty2 from '../assets/fibonifty/fibonifty2.jpg';
+import fibonifty3 from '../assets/fibonifty/fibonifty3.jpg';
+import fibonifty4 from '../assets/fibonifty/fibonifty4.jpg';
+import fibonifty5 from '../assets/fibonifty/fibonifty5.jpg';
+import fibonifty6 from '../assets/fibonifty/fibonifty6.jpg';
+import fibonifty7 from '../assets/fibonifty/fibonifty7.jpg';
+import RollingGallery from '../components/Animations/RollingGallery';
 
 type Project = {
     images: string[],
@@ -29,9 +36,9 @@ const goodle: Project = {
     link: "https://mimura-arieljr.github.io/goodle/"
 }
 
-const reveal: Project = {
-    images: [],
-    name: "Reveal",
+const fibonifty: Project = {
+    images: [fibonifty1, fibonifty2, fibonifty3, fibonifty4, fibonifty5, fibonifty6, fibonifty7],
+    name: "Fibonifty",
     description: "A real-time web application designed to support sprint planning sessions. It enables team members to collaboratively provide their estimates during planning.",
     description_ext: "Users can choose between Fibonacci point values or T-shirt size estimations, depending on team preference.",
     technology: ["TypeScript, NodeJS, Websocket"],
@@ -40,8 +47,7 @@ const reveal: Project = {
 
 const allProjects: Record<string, Project> = {
     goodle,
-    reveal,
-    // Add more projects here
+    fibonifty,
 };
 
 export const Projects = () => {
