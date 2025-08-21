@@ -89,7 +89,7 @@ const ContactSection = () => {
         <form
           className="space-y-12"
           onSubmit={handleSubmit}
-          action="https://formsubmit.co/arieljrmimura@gmail.com"
+          action="https://formsubmit.co/8080d65033ceb3b8ce6b455e45ea67c8"
           method="POST"
         >
           {/* Optional: disable CAPTCHA */}
