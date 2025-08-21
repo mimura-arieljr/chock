@@ -31,7 +31,7 @@ export const SelfSection = () => {
                         <TiltedCard
                             imageSrc="/assets/me.jpeg"
                             altText="Chock Mimura"
-                            captionText="Chock Mimura"
+                            captionText="I really need a new photo T_T"
                             containerHeight="300px"
                             containerWidth="300px"
                             imageHeight="300px"

@@ -14,9 +14,8 @@ type ProjectItem = {
 const projectItems: ProjectItem[] = [
   { id: 'goodle', link: '/project/goodle', text: 'GOODLE', image: goodle },
   { id: 'fibonifty', link: '/project/fibonifty', text: 'FIBONIFTY', image: fibonifty },
-  { id:'enterprise', link: '/project/enterprise', text: 'ENTERPRISE-APP', image: goodle },
-  { id: 'pastebook', link: '/project/pastebook', text: 'PASTEBOOK', image: goodle },
-  { id: 'finesttokyo', link: '/project/finesttokyo', text: 'FINESTTOKYO', image: goodle },
+  // { id: 'pastebook', link: '/project/pastebook', text: 'PASTEBOOK', image: goodle },
+  // { id: 'finesttokyo', link: '/project/finesttokyo', text: 'FINESTTOKYO', image: goodle },
 ];
 
 
